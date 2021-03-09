@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root :to => "homes#top"
   get "home/about" => "homes#about"
+  get "follow_relationships/followers" => "follow_relationships#followers"
+  get "follow_relationships/followings" => "follow_relationships#followings"
 
   resources :books, only: [:index, :show, :edit, :create, :destroy, :update] do
     resource :favorites, only: [:create, :destroy]
